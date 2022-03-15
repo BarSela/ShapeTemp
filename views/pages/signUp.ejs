@@ -8,24 +8,24 @@
     <body>
 
       
-            
+            <div id="errorMsg" style="color:red"></div>
             <div class="wrapper">
                 <h2>Registration</h2>
-                <form action="/signup" method="POST">
+                <form class="signup"  action="/registration" onsubmit=" validateSignupForm()" method="post">
                     <div class="input-box">
-                    <input type="text" placeholder="Enter your name" name="name" required>
+                    <input type="text" id="signName" name="fullName" placeholder="Enter your name"  required>
                     </div>
                     <div class="input-box">
-                    <input type="text" placeholder="Enter your email" name="email" required>
+                    <input type="text" id="signEmail" name="email" placeholder="Enter your email"  required>
                     </div>
                     <div class="input-box">
-                    <input type="password" placeholder="Create password"  name="psw" required>
+                    <input type="password" id="signPassword" placeholder="Create password"   required>
                     </div>
                     <div class="input-box">
-                    <input type="password" placeholder="Confirm password"  name="psw-repeat" required>
+                    <input type="password" id="signPasswordRepeat" placeholder="Confirm password"   required>
                     </div>
                     <div class="policy">
-                    <input type="checkbox">
+                    <input type="checkbox" name="cb" id="signCb">
                     <h3>I accept all terms & condition</h3>
                     </div>
                     <div class="input-box button">
@@ -36,30 +36,61 @@
                     </div>
                 </form>
             </div>
-            <script type="module">
-                // Import the functions you need from the SDKs you need
-                import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
-                import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-database.js";
-                import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
-                // TODO: Add SDKs for Firebase products that you want to use
-                // https://firebase.google.com/docs/web/setup#available-libraries
-              
-                // Your web app's Firebase configuration
-                // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-                const firebaseConfig = {
-                  apiKey: "AIzaSyCOd_2YuTHDX70CCLg8J3piJntLICi-0d8",
-                  authDomain: "my-first-web-a2f98.firebaseapp.com",
-                  databaseURL: "https://my-first-web-a2f98-default-rtdb.europe-west1.firebasedatabase.app",
-                  projectId: "my-first-web-a2f98",
-                  storageBucket: "my-first-web-a2f98.appspot.com",
-                  messagingSenderId: "1067894728670",
-                  appId: "1:1067894728670:web:f79d9c60937b90764c1f4f",
-                  measurementId: "G-E25XMP1G6D"
-                };
-              
-                // Initialize Firebase
-                const app = initializeApp(firebaseConfig);
-                const analytics = getAnalytics(app);
-              </script>
+         
+    
+                  
+
+            <script>
+                function validateSignupForm() {
+                    var fullName = document.getElementById("signName").value;
+                    var email = document.getElementById("signEmail").value;
+                    var password = document.getElementById("signPassword").value;
+                    var passwordRepeat = document.getElementById("signPasswordRepeat").value;
+                    var checkbox = document.querySelector("input[name=cb]");
+                    let viCheckbox = false;
+     
+      
+                    var mustleb = document.querySelector(".accept-terms");
+                    console.log("hello");
+                    submitBtn.disabled = true;
+
+                    checkbox.addEventListener("change", function () {
+                        if (this.checked) {
+                        submitBtn.disabled = false;
+                        } else {
+                        submitBtn.disabled = true;
+                        }
+                    });
+                    submitBtn.addEventListener("click", function () {
+                        if(!submitBtn){
+                            if (checkbox.checked) {
+                        mustleb.removeAttribute("hidden");
+                        }else{
+                            mustleb.setAttribute("hidden", "hidden");
+                        }
+                        }
+                        
+                    });
+                    if (email == "" || fullName == "" || password == "" || passwordRepeat == "" ) {
+                        document.getElementById("errorMsg").innerHTML = "Please fill the required fields"
+                        return false;
+                    }
+                    else if (password.length < 8) {
+                        document.getElementById("errorMsg").innerHTML = "Your password must include atleast 8 characters"
+                        return false;
+                    }
+                    else if (password != passwordRepeat) {
+                        document.getElementById("errorMsg").innerHTML = "please confirm your password"
+                        return false;
+                    }
+                    else {
+                        alert("Successfully signed up");
+                        return true;
+                    }
+                }
+                </script>        
+                
     </body>
 </html>
+
+

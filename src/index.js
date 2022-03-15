@@ -1,9 +1,11 @@
 const express = require("express");
 const port = process.env.PORT || 3000;
 const app = express();
+const fetch = require('node-fetch');
 
 //load and cache JavaScript modules. 
 const ejs = require('ejs');
+const { response } = require("express");
 
 // Set EJS as templating engine
 app.set('view engine', 'ejs');
@@ -26,6 +28,7 @@ app.get('/', (req, res)=>{
 app.get('/login', (req, res)=>{
 
   res.render('pages/login');
+
      
 });
 
@@ -41,45 +44,21 @@ app.listen(port, () => {
   console.log("server is up and running");
 });
 
-// // Signup Route
-// app.post('/signup', (req, res) => {
-//   const { firstName, lastName, email } = req.body;
+app.post('/signUp', function (req, res) {  
+  // Prepare output in JSON format  
+  res.redirect('/');
+})  
 
-//   // Make sure fields are filled
-//   if (!firstName || !lastName || !email) {
-//     res.redirect('/fail');
-//     return;
-//   }
-
-//   // Construct req data
-//   const data = {
-//     members: [
-//       {
-//         email_address: email,
-//         status: 'subscribed',
-//         merge_fields: {
-//           FNAME: firstName,
-//           LNAME: lastName
-//         }
-//       }
-//     ]
-//   };
-
-//   const postData = JSON.stringify(data);
-
-//   fetch('https://usX.api.mailchimp.com/3.0/lists/<YOUR_AUDIENCE_ID>', {
-//     method: 'POST',
-//     headers: {
-//       Authorization: 'auth <YOUR_API_KEY>'
-//     },
-//     body: postData
-//   })
-//     .then(res.statusCode === 200 ?
-//       res.redirect('pages/success') :
-//       res.redirect('pages/fail'))
-//     .catch(err => console.log(err))
-// })
-
+app.post('/registration', function (req, res) {  
+  // Prepare output in JSON format  
+  var userDetails = {  
+      fullName:req.body.fullName,  
+      email:req.body.email  
+  };  
+  console.log(userDetails);
+  res.redirect('/');
+  
+})  
 
 
 
