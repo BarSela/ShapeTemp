@@ -8,5 +8,14 @@
   "parserOptions": {
     "ecmaVersion": "latest"
   },
-  "rules": {}
+  "rules": {
+    "semi": ["error", "always"],
+    "no-sparse-arrays": ["error"],
+    "no-unreachable": ["warn"],
+    "no-unreachable-loop": ["warn"],
+    "no-unsafe-negation": ["warn"],
+    "consistent-return": ["warn"],
+    "no-unused-vars": ["warn"],
+    "camelcase": ["error"]
+  } //ignore err
 }

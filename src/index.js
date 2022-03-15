@@ -8,7 +8,7 @@ const ejs = require('ejs');
 
 // Set EJS as templating engine
 app.set('view engine', 'ejs');
-app.use(express.static("public"));
+app.use(express.static('public'));
 app.use(express.urlencoded({
   extended: true
 }));
@@ -21,6 +21,6 @@ app.get('/', (req, res)=>{
   });
 
   app.listen(port, () => {
-    console.log("server is up and running");
+    console.log('server is up and running');
     //check
   });
