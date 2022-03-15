@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "dev": "node src/index.js",
+    "dev": "nodemon src/index.js",
     "test": "mocha tests/*.spec.js --color",
     "lint": "eslint src/* --color",
     "start": "node src/index.js"
@@ -24,8 +24,11 @@
   "homepage": "https://github.com/BarSela/CICD#readme",
   "dependencies": {
     "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.3",
     "express-openid-connect": "^2.7.1",
+    "firebase": "^9.6.8",
+    "nodemon": "^2.0.15",
     "secret": "^1.2.0"
   },
   "devDependencies": {
