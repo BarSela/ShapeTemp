@@ -2,25 +2,21 @@
 
  
     <header>
-    <%- include('../partials/header') %>
+        <%- include('../partials/header') %>
     </header>
     <body>
-
-    
         
-         
-        
-            <div class="main">
+            
                 <div class="center">
                     <h2>Login</h2>
-                    <form method="post">
+                    <form class="login" action="/log" method="POST">
                         <div class="txt_field">
-                            <input type="text" required>
+                            <input type="email" name="email" required>
                             <span></span>
-                            <label>Username</label>
+                            <label>Email</label>
                         </div>
                         <div class="txt_field">
-                            <input type="password" required>
+                            <input type="password" name="password" required>
                             <span></span>
                             <label>Password</label>
                         </div>
@@ -31,8 +27,6 @@
                         </div>
                     </form>
                 </div>
-            </div>
-       
-        
+            
     </body>
 </html>
