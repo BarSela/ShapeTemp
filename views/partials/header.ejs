@@ -10,14 +10,13 @@
     </video>
             
             <div class="video-overlay"></div>
-            <div class="main-section"> 
-                
+            <div class="main-section">    
             </div>
             <div class="navbar">
                 <ul>
                 <li><a id="home"  class="active" href="/" >Home</a></li>
                 <li><a id="about" href=#>About</a></li>
-                <li><a id="log" href="/login">Login</a></li>
+                <li><a id="login" href="/login">Login</a></li>
                 <li><a id="sgnup" href="/signUp">signup</a></li>
                 </ul>
         
@@ -37,14 +36,15 @@
                 }
               
                 var currentPage = window.location.pathname;
+                
                 if (currentPage == "/login") {
-                    activate("log");
+                    activate("login");
                     deactivate("home");
                     deactivate("sgnup");
                     
                 }
                 else if (currentPage == "/signUp") {
-                    deactivate("log");
+                    deactivate("login");
                     deactivate("home");
                     activate("sgnup");
                

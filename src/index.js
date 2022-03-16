@@ -1,65 +1,56 @@
 const express = require("express");
-const port = process.env.PORT || 3000;
-const app = express();
-const fetch = require('node-fetch');
-
-//load and cache JavaScript modules. 
 const ejs = require('ejs');
-const { response } = require("express");
+const mongoose = require('mongoose');
+const {signup,login} = require('../controllers/user');
+
+const app = express();
+const port = process.env.PORT || 3000;
+ 
+
+mongoose.connect(`mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@pm-web-api.p22dw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+       
+});
+
+mongoose.connection.on('connected', () => {
+    console.log('MongoDB Connected!');
+});
+
 
 // Set EJS as templating engine
 app.set('view engine', 'ejs');
+
+// MiddleWare
 app.use(express.static("public"));
-app.use(express.urlencoded({
-  extended: true
-}));
-
-app.get('/', (req, res)=>{
- 
-  // The render method takes the name of the HTML
-  // page to be rendered as input
-  // This page should be in the views folder
-  // in the root directory.
-  res.render('pages/homePage');
-   
-  });
-
-
-app.get('/login', (req, res)=>{
-
-  res.render('pages/login');
-
-     
-});
-
-app.get('/signUp', (req, res)=>{
-
-  res.render('pages/signUp');
-     
-});
-
+app.use(express.urlencoded({extended: true}));// for parsing application to x-www-form-urlencoded
+app.use(express.json());
 
 
 app.listen(port, () => {
   console.log("server is up and running");
 });
 
-app.post('/signUp', function (req, res) {  
-  // Prepare output in JSON format  
-  res.redirect('/');
-})  
+//Routing for the GET request methods 
 
-app.post('/registration', function (req, res) {  
-  // Prepare output in JSON format  
-  var userDetails = {  
-      fullName:req.body.fullName,  
-      email:req.body.email  
-  };  
-  console.log(userDetails);
-  res.redirect('/');
-  
-})  
+app.get('/', (req, res)=>{
+  res.render('pages/homePage');
+});
 
+app.get('/login', (req, res)=>{
+  res.render('pages/login');     
+});
 
+app.get('/signUp', (req, res)=>{
+  res.render('pages/signUp');   
+});
+
+app.get('/homePage', (req, res)=>{
+  res.render('pages/homePage');    
+
+});
+
+app.post('/signup', signup);
+app.post('/log', login);
 
 

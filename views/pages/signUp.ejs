@@ -11,86 +11,98 @@
             <div id="errorMsg" style="color:red"></div>
             <div class="wrapper">
                 <h2>Registration</h2>
-                <form class="signup"  action="/registration" onsubmit=" validateSignupForm()" method="post">
+                <div class="text accept-terms" id="errorMsg" style="color:red" hidden>
+                    <h3>must agree the terms </h3> 
+                </div>
+                <form class="signup"  action="/signup"   method="POST" >
                     <div class="input-box">
-                    <input type="text" id="signName" name="fullName" placeholder="Enter your name"  required>
+                    <input type="text"  name="fullName" placeholder="Enter your name"  required>
                     </div>
                     <div class="input-box">
-                    <input type="text" id="signEmail" name="email" placeholder="Enter your email"  required>
+                    <input type="text"  name="email" placeholder="Enter your email"  required>
                     </div>
                     <div class="input-box">
-                    <input type="password" id="signPassword" placeholder="Create password"   required>
+                    <input type="password" name="password" placeholder="Create password"   required>
                     </div>
                     <div class="input-box">
-                    <input type="password" id="signPasswordRepeat" placeholder="Confirm password"   required>
+                    <input type="password" name="passwordRepeat" placeholder="Confirm password"  required>
                     </div>
                     <div class="policy">
                     <input type="checkbox" name="cb" id="signCb">
                     <h3>I accept all terms & condition</h3>
                     </div>
                     <div class="input-box button">
-                    <input type="Submit" value="Register Now">
-                    </div>
+                        <input type="Submit" value="Register Now">
+                        </div>
                     <div class="text">
-                    <h3>Already have an account? <a href="login.ejs">Login now</a></h3>
+                    <h3>Already have an account? <a href="/login">Login now</a></h3>
                     </div>
+                    
                 </form>
             </div>
          
     
-                  
-
-            <script>
-                function validateSignupForm() {
-                    var fullName = document.getElementById("signName").value;
-                    var email = document.getElementById("signEmail").value;
-                    var password = document.getElementById("signPassword").value;
-                    var passwordRepeat = document.getElementById("signPasswordRepeat").value;
-                    var checkbox = document.querySelector("input[name=cb]");
-                    let viCheckbox = false;
-     
-      
-                    var mustleb = document.querySelector(".accept-terms");
-                    console.log("hello");
-                    submitBtn.disabled = true;
-
-                    checkbox.addEventListener("change", function () {
-                        if (this.checked) {
-                        submitBtn.disabled = false;
-                        } else {
-                        submitBtn.disabled = true;
-                        }
-                    });
-                    submitBtn.addEventListener("click", function () {
-                        if(!submitBtn){
-                            if (checkbox.checked) {
-                        mustleb.removeAttribute("hidden");
-                        }else{
-                            mustleb.setAttribute("hidden", "hidden");
-                        }
-                        }
-                        
-                    });
-                    if (email == "" || fullName == "" || password == "" || passwordRepeat == "" ) {
-                        document.getElementById("errorMsg").innerHTML = "Please fill the required fields"
-                        return false;
-                    }
-                    else if (password.length < 8) {
-                        document.getElementById("errorMsg").innerHTML = "Your password must include atleast 8 characters"
-                        return false;
-                    }
-                    else if (password != passwordRepeat) {
-                        document.getElementById("errorMsg").innerHTML = "please confirm your password"
-                        return false;
-                    }
-                    else {
-                        alert("Successfully signed up");
-                        return true;
-                    }
-                }
-                </script>        
                 
     </body>
+    <script>
+        var temp=false;
+        if(temp == false)
+        {
+            console.log("hello");
+        }
+        event.preventDefault();
+        form.addEventListener("submit",  validateSignupForm);
+    
+        function validateSignupForm() {
+            // var fullName = document.getElementById("signName").value;
+            // var email = document.getElementById("signEmail").value;
+            // var password = document.getElementById("signPassword").value;
+            // var passwordRepeat = document.getElementById("signPasswordRepeat").value;
+            // var checkbox = document.querySelector("input[name=cb]");
+            // let viCheckbox = false;
+
+            // var mustleb = document.querySelector(".accept-terms");
+            console.log("hello");
+            submitBtn.disabled = true;
+
+            checkbox.addEventListener("change", function () {
+                if (this.checked) {
+                submitBtn.disabled = false;
+                } else {
+                submitBtn.disabled = true;
+                }
+            });
+            submitBtn.addEventListener("click", function () {
+                if(!submitBtn){
+                    if (checkbox.checked) {
+                mustleb.removeAttribute("hidden");
+                }else{
+                    mustleb.setAttribute("hidden", "hidden");
+                }
+                }
+                
+            });
+            if (email == "" || fullName == "" || password == "" || passwordRepeat == "" ) {
+                document.getElementById("errorMsg").innerHTML = "Please fill the required fields"
+                //return false;
+            }
+            else if (password.length < 8) {
+                document.getElementById("errorMsg").innerHTML = "Your password must include atleast 8 characters"
+                //return false;
+            }
+            else if (password != passwordRepeat) {
+                document.getElementById("errorMsg").innerHTML = "please confirm your password"
+                //return false;
+            }
+            else {
+                alert("Successfully signed up");
+                //return true;
+            }
+            return false;
+        }
+        
+    </script>       
+    
 </html>
 
 
