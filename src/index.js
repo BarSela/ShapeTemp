@@ -3,6 +3,10 @@ const ejs = require('ejs');
 const mongoose = require('mongoose');
 const {signup,login} = require('../controllers/user');
 
+const bcrypt = require('bcrypt');//Password encryption
+const jwt = require('jsonwebtoken');
+
+
 const app = express();
 const port = process.env.PORT || 3000;
  
@@ -32,7 +36,7 @@ app.listen(port, () => {
 });
 
 //Routing for the GET request methods 
-
+var status="false";
 app.get('/', (req, res)=>{
   res.render('pages/homePage');
 });
@@ -40,9 +44,18 @@ app.get('/', (req, res)=>{
 app.get('/login', (req, res)=>{
   res.render('pages/login');     
 });
+// app.get('/signUp', (req, res)=>{
+//   res.render('pages/signUp');   
+// });
+app.get('/signUp', (req, res)=> {
+  
 
-app.get('/signUp', (req, res)=>{
-  res.render('pages/signUp');   
+  var status ='true';
+
+  res.render('pages/signUp', {
+    
+    status: status
+  });
 });
 
 app.get('/homePage', (req, res)=>{
@@ -50,7 +63,8 @@ app.get('/homePage', (req, res)=>{
 
 });
 
-app.post('/signup', signup);
 app.post('/log', login);
+app.post('/signup', signup);
+
 
 

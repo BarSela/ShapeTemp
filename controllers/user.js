@@ -2,28 +2,29 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');//Password encryption
 const jwt = require('jsonwebtoken');
 const User = require('../model/user');
+const ejs = require('ejs');
+
 
 module.exports = {
     signup: (req, res,next) => {
-       
+            
             var fullName = req.body.fullName;
             var email = req.body.email;
             var password = req.body.password;
-            var passwordRepeat =req.body.passwordRepeat;
-        if(password != passwordRepeat){
-            var temp = "false";
-            return res.render('pages/signUp',{temp:false});
-            
-        }
+            var status = "false";
+                
+          
+          
         //checks if the email already exists in the databases
-        User.find({email}).then((user) => {
-            if (user.length >= 1) {
-                return res.status(409).json({
-                    message: 'Email exists'
-                })
+        User.find({email}).then((users) => {
+            
+            if (users.length >= 1) {
+                return res.render('pages/signUp', {status: status}); 
             }
 
+
             bcrypt.hash(password, 10, (error, hash) => {
+                
                 if (error) {
                     return res.status(500).json({
                             error
@@ -36,14 +37,14 @@ module.exports = {
                 })
                 user.save().then((result) => {
                     console.log('new user created');
-                    res.redirect('/login');
+                    return res.render('pages/homePage');
                     
                         
                 }).catch(error => {
                     res.status(500).json({
                         error
                     })
-                   
+                    console.log("post error ");
                 });
             });
         })
