@@ -1,4 +1,4 @@
-# project1
+# Appointments Management System
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
