@@ -9,6 +9,7 @@
             
                 <div class="center">
                     <h2>Login</h2>
+                    <label id="logErrorMsg" style="font-size: 16px; color: red;" hidden></label> 
                     <form class="login" action="/log" method="POST">
                         <div class="txt_field">
                             <input type="email" name="email" required>
@@ -27,6 +28,17 @@
                         </div>
                     </form>
                 </div>
-            
+            <script>
+                var logStatus = true;
+                var logErrorMsg =document.getElementById("logErrorMsg");
+                logErrorMsg.style.display = 'none';
+                console.log("script");
+                if ("<%= loginStatus %>" == 'false'){
+                        console.log("if script");
+                        logErrorMsg.innerHTML = "The email / password not correct";
+                        logErrorMsg.style.display='block';
+                        logStatus=false;
+                    } 
+            </script>
     </body>
 </html>

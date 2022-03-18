@@ -51,22 +51,19 @@ module.exports = {
     },
     login: (req, res) => {
         const { email, password } = req.body;
-        
+        var loginStatus = "false";
         User.find({ email }).then((users) => {
             //If the user list is empty
             if (users.length === 0) {
-                return res.status(401).json({
-                    message: 'Auth failed'
-                });
+                return res.render('pages/signUp', {loginStatus: loginStatus}); 
+            
             }
 
             const [ user ] = users;
             
             bcrypt.compare(password, user.password, (error, result) => {
                 if (error) {
-                    return res.status(401).json({
-                        message: 'Auth failed'
-                    });
+                    return res.render('pages/login', {loginStatus: loginStatus});
                 }
 
                 if (result) {
@@ -85,9 +82,8 @@ module.exports = {
                    
                 }
                 //If the password is incorrect
-                res.status(401).json({
-                    message: 'Auth failed'
-                });
+                return res.render('pages/login', {loginStatus: loginStatus});
+                
             })
         })
     }

@@ -41,23 +41,17 @@ app.get('/', (req, res)=>{
   res.render('pages/homePage');
 });
 
-app.get('/login', (req, res)=>{
-  res.render('pages/login');     
-});
-// app.get('/signUp', (req, res)=>{
-//   res.render('pages/signUp');   
-// });
+
+
 app.get('/signUp', (req, res)=> {
   
-
   var status ='true';
-
-  res.render('pages/signUp', {
-    
-    status: status
-  });
+  res.render('pages/signUp', { status: status});
 });
-
+app.get('/login', (req, res)=> {
+  var loginStatus ='true';
+  res.render('pages/login', { loginStatus: loginStatus});
+});
 app.get('/homePage', (req, res)=>{
   res.render('pages/homePage');    
 
