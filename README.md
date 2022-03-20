@@ -25,7 +25,7 @@ To run this project, install it locally using npm:
 * `npm install eslint`
 * `npm install ejs`
 
-##Authors
+## Authors
 
 * Lihi Sabag
 * Bar Sela
