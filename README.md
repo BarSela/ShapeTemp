@@ -23,14 +23,25 @@ Project is created with:
 * node.js 16.14.0
 	
 ## Installation
-To run this project, install it locally using npm:
+* Open a folder for this project and clone this repository by writing the following command in command-line:
+```
+git clone https://github.com/BarSela/CICD.git
+```
+After clone the project run this command in the project folder from the command-line:
+```
+npm install
+```
 
-* `npm install`
-* `npm install express`
-* `npm install nodemon`
-* `npm install mocha chai`
-* `npm install eslint`
-* `npm install ejs`
+## Running The Application
+
+To run the application use this command in the project folder from the command-line:
+```
+npm run dev
+```
+
+Your application should run on port 3000 with the development environment configuration, so in your browser just go to http://localhost:3000 
+
+That's it! Your application should be running. 
 
 ## Authors
 
