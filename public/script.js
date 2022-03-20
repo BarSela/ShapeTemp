@@ -17,3 +17,4 @@ function setRotation(element, rotationRatio) {
 }
 
 setClock();
+setInterval(setClock, 1000);

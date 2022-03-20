@@ -79,7 +79,7 @@ module.exports = {
                     console.log(userEmail);
                     console.log('Auth successful');
                     
-                    return res.redirect('/homePage');
+                    return res.redirect('/wellcomePage');
                    
                 }
                 //If the password is incorrect
