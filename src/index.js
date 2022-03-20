@@ -25,7 +25,8 @@ app.set("view engine", "ejs");
 
 // MiddleWare
 app.use(express.static("public"));
-app.use(express.urlencoded({ extended: true })); // for parsing application to x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
+// for parsing application to x-www-form-urlencoded
 app.use(express.json());
 
 var userEmail = "";
