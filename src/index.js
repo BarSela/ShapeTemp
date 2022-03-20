@@ -9,7 +9,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 mongoose.connect(
-  `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@pm-web-api.p22dw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+  `mongodb+srv://LihiSabag:1234512345@pm-web-api.p22dw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
