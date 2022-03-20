@@ -15,7 +15,7 @@
     "no-unreachable-loop": ["warn"],
     "no-unsafe-negation": ["warn"],
     "consistent-return": ["warn"],
-    "no-unused-vars": ["warn"],
+    "no-unused-vars": ["off"],
     "camelcase": ["error"]
   } //ignore err
 }
