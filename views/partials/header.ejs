@@ -1,0 +1,51 @@
+<title>NoName</title>
+<meta charset='utf-8'>
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<meta name="viewport" content="width=device-width,user-scalable=yes, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<header>
+    <video id="myVideo" autoplay muted loop playsinline>
+        <source src="/assets/backgroundVideo.mp4" type="video/mp4" style="background-color: hsla(50, 33%, 25%, .75)">
+    </video>
+            
+            <div class="video-overlay"></div>
+            
+            <div class="navbar">
+                <ul>
+                <li><a id="home"  class="active" href="/" >Home</a></li>
+                <li><a id="about" href=#>About</a></li>
+                <li><a id="login" href="/login" >Login</a></li>
+                <li><a id="logout" href="/logout" hidden >logout</a></li>
+                
+            </ul>
+        
+            </div>
+            <script>
+            function activate(id) {
+                    document.getElementById(id).className = "active";
+                }
+                function deactivate(id) {
+                    document.getElementById(id).className = 'none';
+                }
+                function show(id) {
+                    document.getElementById(id).style.display = 'block';
+                }
+                function hide(id) {
+                    document.getElementById(id).style.display = 'none';
+                }
+              
+                var currentPage = window.location.pathname;
+                
+                if (currentPage == "/login") {
+                    activate("login");
+                    deactivate("home");
+                  
+                }
+                else if (currentPage == "/signUp") {
+                    deactivate("login");
+                    deactivate("home");
+                }    
+            </script> 
+            
+</header>
