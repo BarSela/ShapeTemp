@@ -1,3 +1,5 @@
+![alt text](https://magenta-cloud.pan-net.cloud/images/cicd.png)
+
 # Appointments Management System
 This project is part of academic course - Project management in SCE College.
 This project is an example for interacting with an external web API using CICD development methods.
