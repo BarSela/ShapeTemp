@@ -6,6 +6,8 @@ This project is an example for interacting with an external web API using CICD d
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Installation](#Installation)
+* [Running The Application](#Running The Application)
+* [Authors](#Authors)
 
 ## General info
 This project creats a web page in mythology of circleCi\Cd 
