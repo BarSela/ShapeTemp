@@ -2,7 +2,7 @@
 
 *{
     
-    margin: 0%;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
@@ -75,7 +75,7 @@
 }
 .content{
   width: 100%;
-  position: static;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   text-align: center;
@@ -319,7 +319,7 @@ p2{
     max-width: 430px;
     width: 100%;
     background: #fff;
-    padding: 34px;
+    padding: 20px;
     border-radius: 6px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
     background-size: cover;
@@ -327,10 +327,6 @@ p2{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-  
-    
-  
     
   }
   .wrapper h2{

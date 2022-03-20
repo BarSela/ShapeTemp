@@ -32,13 +32,14 @@
                 var logStatus = true;
                 var logErrorMsg =document.getElementById("logErrorMsg");
                 logErrorMsg.style.display = 'none';
-                console.log("script");
+               
                 if ("<%= loginStatus %>" == 'false'){
                         console.log("if script");
-                        logErrorMsg.innerHTML = "The email / password not correct";
+                        logErrorMsg.innerHTML = "The email or password is incorrect";
                         logErrorMsg.style.display='block';
                         logStatus=false;
-                    } 
+                    }
+                
             </script>
     </body>
 </html>

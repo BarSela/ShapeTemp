@@ -43,38 +43,41 @@
                 var regStatus = true;
                 var errorMsg =document.getElementById("errorMsg");
                 errorMsg.style.display = 'none';
-                console.log("script");
+                
                 if ("<%= status %>" == 'false'){
-                        console.log("if script");
+                        
                         errorMsg.innerHTML = "This email is already exixt";
                         errorMsg.style.display='block';
                         regStatus=false;
                     } 
                 function validateSignupForm() {
                     var regStatus = true;
-                    console.log("func");
                     var fullName = document.getElementById("fullName").value;
                     var email = document.getElementById("email").value;
                     var password = document.getElementById("password").value;
                     var passwordRepeat = document.getElementById("passwordRepeat").value;
-                    
-                    if (password.length <= 8) {
+                    var checkbox = document.getElementById("cb").checked;
+                   
+                    if (!checkbox) {
+                        errorMsg.innerHTML = "You must agree the terms";
+                        errorMsg.style.display='block';
+                        return false;
+                        
+                    }
+
+                    if (password.length < 8) {
                         errorMsg.innerHTML = "Your password must include atleast 8 characters";
                         errorMsg.style.display='block';
                         return false;
                         
                     }
-                    else{
-                        errorMsg.style.display='none';
-                    }
+                   
                     if (password != passwordRepeat) {
                         errorMsg.innerHTML = "please confirm your password"
                         errorMsg.style.display='block';
                         return false;
                     }
-                    else{
-                        errorMsg.style.display='none';
-                    }
+                   
                     if(!ValidateEmail(email)){
                         
                         errorMsg.innerHTML = "You have entered an invalid email address!"

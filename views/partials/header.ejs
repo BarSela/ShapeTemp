@@ -10,19 +10,19 @@
     </video>
             
             <div class="video-overlay"></div>
-            <div class="main-section">    
-            </div>
+            
             <div class="navbar">
                 <ul>
                 <li><a id="home"  class="active" href="/" >Home</a></li>
                 <li><a id="about" href=#>About</a></li>
-                <li><a id="login" href="/login">Login</a></li>
-                <li><a id="sgnup" href="/signUp">signup</a></li>
-                </ul>
+                <li><a id="login" href="/login" >Login</a></li>
+                <li><a id="logout" href="/logout" hidden >logout</a></li>
+                
+            </ul>
         
             </div>
             <script>
-                function activate(id) {
+            function activate(id) {
                     document.getElementById(id).className = "active";
                 }
                 function deactivate(id) {
@@ -40,16 +40,13 @@
                 if (currentPage == "/login") {
                     activate("login");
                     deactivate("home");
-                    deactivate("sgnup");
-                    
+                  
                 }
                 else if (currentPage == "/signUp") {
                     deactivate("login");
                     deactivate("home");
-                    activate("sgnup");
-               
-                }
-                </script> 
+                }    
+            </script> 
             
 </header>
 

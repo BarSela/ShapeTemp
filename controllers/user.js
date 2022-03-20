@@ -22,7 +22,7 @@ module.exports = {
                 return res.render('pages/signUp', {status: status}); 
             }
 
-
+            //Password encryption
             bcrypt.hash(password, 10, (error, hash) => {
                 
                 if (error) {
@@ -60,7 +60,7 @@ module.exports = {
             }
 
             const [ user ] = users;
-            
+            //Checking the password
             bcrypt.compare(password, user.password, (error, result) => {
                 if (error) {
                     return res.render('pages/login', {loginStatus: loginStatus});
@@ -75,9 +75,10 @@ module.exports = {
                     {   //For how long the user can stay connected
                         expiresIn: "1H" //1 hour
                     });
-
+                    userEmail={email};
+                    console.log(userEmail);
                     console.log('Auth successful');
-                    console.log(token);
+                    
                     return res.redirect('/homePage');
                    
                 }
@@ -88,3 +89,7 @@ module.exports = {
         })
     }
 }
+
+
+
+

@@ -2,8 +2,7 @@ const express = require("express");
 const ejs = require('ejs');
 const mongoose = require('mongoose');
 const {signup,login} = require('../controllers/user');
-
-const bcrypt = require('bcrypt');//Password encryption
+const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 
@@ -30,6 +29,10 @@ app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));// for parsing application to x-www-form-urlencoded
 app.use(express.json());
 
+var userEmail="";
+var fullName="";
+
+
 
 app.listen(port, () => {
   console.log("server is up and running");
@@ -37,20 +40,23 @@ app.listen(port, () => {
 
 //Routing for the GET request methods 
 var status="false";
+
+
 app.get('/', (req, res)=>{
+  console.log(userEmail);
   res.render('pages/homePage');
 });
 
-
-
 app.get('/signUp', (req, res)=> {
-  
   var status ='true';
   res.render('pages/signUp', { status: status});
 });
+
 app.get('/login', (req, res)=> {
   var loginStatus ='true';
+ 
   res.render('pages/login', { loginStatus: loginStatus});
+  
 });
 app.get('/homePage', (req, res)=>{
   res.render('pages/homePage');    
@@ -59,6 +65,10 @@ app.get('/homePage', (req, res)=>{
 
 app.post('/log', login);
 app.post('/signup', signup);
+
+
+
+
 
 
 
