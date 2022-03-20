@@ -38,7 +38,6 @@ app.listen(port, () => {
 var status = "false";
 
 app.get("/", (req, res) => {
-  console.log(userEmail);
   res.render("pages/homePage");
 });
 
