@@ -1,5 +1,4 @@
 const express = require("express");
-const ejs = require("ejs");
 const mongoose = require("mongoose");
 const { signup, login } = require("../controllers/user");
 const bcrypt = require("bcrypt");
@@ -57,5 +56,8 @@ app.get("/homePage", (req, res) => {
   res.render("pages/homePage");
 });
 
+app.get("/wellcomePage", (req, res) => {
+  res.render("pages/wellcomePage");
+});
 app.post("/log", login);
 app.post("/signup", signup);
