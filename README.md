@@ -1,4 +1,7 @@
 # Appointments Management System
+This project is part of academic course - Project management in SCE College.
+This project is an example for interacting with an external web API using CICD development methods.
+
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
@@ -22,3 +25,9 @@ To run this project, install it locally using npm:
 * `npm install eslint`
 * `npm install ejs`
 
+## Authors
+
+* Lihi Sabag
+* Bar Sela
+* Eylon Ifrah
+* Noa Ben Gigi
