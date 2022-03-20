@@ -8,7 +8,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 mongoose.connect(
-  `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@pm-web-api.p22dw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+  `mongodb+srv://LihiSabag:1234512345@pm-web-api.p22dw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -24,7 +24,8 @@ app.set("view engine", "ejs");
 
 // MiddleWare
 app.use(express.static("public"));
-app.use(express.urlencoded({ extended: true })); // for parsing application to x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
+// for parsing application to x-www-form-urlencoded
 app.use(express.json());
 
 var userEmail = "";
