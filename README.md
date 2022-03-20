@@ -1,4 +1,4 @@
-![image](https://magenta-cloud.pan-net.cloud/images/cicd.png =250x250)
+![image](https://magenta-cloud.pan-net.cloud/images/cicd.png = 250x250)
 
 # Appointments Management System
 This project is part of academic course - Project management in SCE College.
