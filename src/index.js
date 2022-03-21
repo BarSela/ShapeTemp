@@ -36,7 +36,7 @@ app.listen(port, () => {
 });
 
 //Routing for the GET request methods
-var status = "false";
+//var status = "false";
 
 app.get("/", (req, res) => {
   res.render("pages/homePage");
@@ -48,13 +48,15 @@ app.get("/signUp", (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-  var loginStatus = "true";
-
-  res.render("pages/login", { loginStatus: loginStatus });
+  
+  var loginStatus ='true';
+  res.render('pages/login', { loginStatus: loginStatus});
+  
 });
 app.get("/homePage", (req, res) => {
   res.render("pages/homePage");
 });
+
 
 app.get("/wellcomePage", (req, res) => {
   res.render("pages/wellcomePage");

@@ -42,13 +42,14 @@
 }
 
 .navbar{
-    width: 85%;
-    margin: auto;
-    padding: 20px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     
+  width: 85%;
+  margin: auto;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+     
 }
 .navbar ul li{
     list-style: none;
@@ -73,6 +74,14 @@
 .navbar ul li:hover:after{
     width: 100%;
 }
+.navbar ul li a logoutItem{
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+
+}
+
+
 .content{
   width: 100%;
   position: absolute;

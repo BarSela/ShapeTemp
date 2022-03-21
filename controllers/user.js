@@ -49,6 +49,7 @@ module.exports = {
             });
         })
     },
+    
     login: (req, res) => {
         const { email, password } = req.body;
         var loginStatus = "false";
@@ -84,10 +85,11 @@ module.exports = {
                 }
                 //If the password is incorrect
                 return res.render('pages/login', {loginStatus: loginStatus});
-                
+                  
             })
         })
     }
 }
+
 
 
