@@ -28,9 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 // for parsing application to x-www-form-urlencoded
 app.use(express.json());
 
-var userEmail = "";
-var fullName = "";
-var connected = "false";
+
 
 app.listen(port, () => {
   console.log("server is up and running");
@@ -38,23 +36,26 @@ app.listen(port, () => {
 
 //Routing for the GET request methods
 //var status = "false";
+var connected ;
 
 app.get("/", (req, res) => {
+ 
   res.render("pages/homePage",{connected:connected});
 });
 
 app.get("/signUp", (req, res) => {
   var status = "true";
+ 
   res.render("pages/signUp", { status: status ,connected:connected});
 });
 
 app.get("/login", (req, res) => {
   var loginStatus ='true';
-  res.render('pages/login', { loginStatus: loginStatus,connected:connected});
+  res.render('pages/login',{loginStatus: loginStatus,connected:connected});
   
 });
 app.get("/homePage", (req, res) => {
-  res.render("pages/homePage",{connected:connected});
+  res.render("pages/homePage");
 });
 
 

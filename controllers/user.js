@@ -7,7 +7,7 @@ const ejs = require('ejs');
 
 module.exports = {
     signup: (req, res,next) => {
-            
+            var connected = "false";
             var fullName = req.body.fullName;
             var email = req.body.email;
             var password = req.body.password;
@@ -19,7 +19,7 @@ module.exports = {
         User.find({email}).then((users) => {
             
             if (users.length >= 1) {
-                return res.render('pages/signUp', {status: status}); 
+                return res.render('pages/signUp', {status: status,connected:connected}); 
             }
 
             //Password encryption
@@ -37,7 +37,7 @@ module.exports = {
                 })
                 user.save().then((result) => {
                     console.log('new user created');
-                    return res.render('pages/homePage');
+                    return res.redirect('/wellcomePage');
                     
                         
                 }).catch(error => {
@@ -77,10 +77,8 @@ module.exports = {
                     {   //For how long the user can stay connected
                         expiresIn: "1H" //1 hour
                     });
-                    userEmail={email};
-                    console.log(userEmail);
-                    console.log('Auth successful');
                     
+                    console.log('Auth successful');
                     return res.redirect('/wellcomePage');
                    
                 }
