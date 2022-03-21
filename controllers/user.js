@@ -53,6 +53,7 @@ module.exports = {
     login: (req, res) => {
         const { email, password } = req.body;
         var loginStatus = "false";
+        var connected = "false";
         User.find({ email }).then((users) => {
             //If the user list is empty
             if (users.length === 0) {
@@ -64,7 +65,7 @@ module.exports = {
             //Checking the password
             bcrypt.compare(password, user.password, (error, result) => {
                 if (error) {
-                    return res.render('pages/login', {loginStatus: loginStatus});
+                    return res.render('pages/login', {loginStatus: loginStatus,connected:connected});
                 }
 
                 if (result) {
@@ -84,7 +85,7 @@ module.exports = {
                    
                 }
                 //If the password is incorrect
-                return res.render('pages/login', {loginStatus: loginStatus});
+                return res.render('pages/login', {loginStatus: loginStatus,connected:connected});
                   
             })
         })
