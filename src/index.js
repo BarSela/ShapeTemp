@@ -30,6 +30,7 @@ app.use(express.json());
 
 var userEmail = "";
 var fullName = "";
+var connected = "false";
 
 app.listen(port, () => {
   console.log("server is up and running");
@@ -39,27 +40,33 @@ app.listen(port, () => {
 //var status = "false";
 
 app.get("/", (req, res) => {
-  res.render("pages/homePage");
+  res.render("pages/homePage",{connected:connected});
 });
 
 app.get("/signUp", (req, res) => {
   var status = "true";
-  res.render("pages/signUp", { status: status });
+  res.render("pages/signUp", { status: status ,connected:connected});
 });
 
 app.get("/login", (req, res) => {
-  
   var loginStatus ='true';
-  res.render('pages/login', { loginStatus: loginStatus});
+  res.render('pages/login', { loginStatus: loginStatus,connected:connected});
   
 });
 app.get("/homePage", (req, res) => {
-  res.render("pages/homePage");
+  res.render("pages/homePage",{connected:connected});
 });
 
 
 app.get("/wellcomePage", (req, res) => {
-  res.render("pages/wellcomePage");
+  connected ="true";
+  res.render("pages/wellcomePage",{connected:connected});
 });
+app.get("/logout", (req, res) => {
+  connected = "false";
+  res.render("pages/homePage",{connected:connected});
+});
+
+
 app.post("/log", login);
 app.post("/signup", signup);
