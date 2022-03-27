@@ -9,13 +9,12 @@
     "ecmaVersion": "latest"
   },
   "rules": {
-    "semi": ["error", "always"],
-    "no-sparse-arrays": ["error"],
+    "semi": ["error", "always"], // error when missing ";"
+    "no-sparse-arrays": ["error"], //Disallows sparse arrays
     "no-unreachable": ["warn"],
     "no-unreachable-loop": ["warn"],
     "no-unsafe-negation": ["warn"],
     "consistent-return": ["warn"],
-    "no-unused-vars": "off",
     "camelcase": ["error"]
   } //ignore err
 }
