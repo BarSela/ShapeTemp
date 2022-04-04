@@ -15,12 +15,13 @@
     "no-unreachable-loop": ["warn"], //avoid infinite loops in the for loop conditions
     "no-unsafe-negation": ["warn"], //disallow negating the left operand of relational operators
     "consistent-return": ["warn"], //make sure all getter methods return something.
-    "no-unused-vars": "off", //allow unused vars.
+    "no-unused-vars": ["warn"], //disallow unused vars.
     "no-unused-labels": ["warn"], //	disallow unused labels
     "camelcase": ["error"], //Camel case combines words by capitalizing all words following the first word and removing the space
     "no-use-before-define": [
       "error",
       { "functions": true, "classes": true, "variables": true }
-    ] //disallow the use of variables before they are defined
+    ], //disallow the use of variables before they are defined
+    "no-duplicate-imports": ["error", { "includeExports": true }] //his rules validates that all imports from a single module exists in a single import statement
   }
 }
