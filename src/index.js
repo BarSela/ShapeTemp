@@ -1,11 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const { signup, login } = require("../controllers/user");
+const { addTraining } = require("../controllers/trainer");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5000;
 
 mongoose.connect(
   `mongodb+srv://LihiSabag:1234512345@pm-web-api.p22dw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
@@ -50,6 +51,9 @@ app.get("/login", (req, res) => {
   var loginStatus = "true";
   res.render("pages/login", { loginStatus: loginStatus, connected: connected });
 });
+app.get("/calendar", (req, res) => {
+  res.render("pages/calendar");
+});
 app.get("/homePage", (req, res) => {
   res.render("pages/homePage");
 });
@@ -65,3 +69,4 @@ app.get("/logout", (req, res) => {
 
 app.post("/log", login);
 app.post("/signup", signup);
+app.post("/new", addTraining);
