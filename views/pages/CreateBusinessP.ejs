@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <title>Business profile</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link rel="stylesheet" href="/css/CreateBusinessP.css" />
+  <style></style>
+  
+  <body class="w3-light-grey" id="page-top">
+    <!-- Page Container -->
+    <div class="w3-content w3-margin-top">
+      <!-- The Grid -->
+      <div class="w3-row-padding">
+        
+
+
+        <div class="page" id="create-page">
+          <div class="w3-container w3-card w3-white w3-margin-bottom">
+            <h2 class="w3-text-grey w3-padding-16">
+              
+            </h2>
+            <div class="w3-container">
+              <div class="w3-card-4">
+                <div class="w3-container w3-teal">
+                  <h2>Create Your Business profile</h2>
+                  
+
+                </div>
+                <form class="w3-container" >
+                  <label class="w3-text-grey"><br>In order to continue the registration process you must complete your business profile</br></label>
+                  <label class="w3-text-grey" id="general"><b>General</b></label>
+                  <p>      
+                  <label class="w3-text-teal" id="businassName"><b>Business Name</b></label>
+                  <input class="w3-input w3-border w3-light-grey w3-round-xlarge" id="businassName-Input" name="BusinessName" type="text" required></p>
+                  <p>      
+                  <label class="w3-text-teal"><b>Full Name</b></label>
+                  <input class="w3-input w3-border w3-light-grey w3-round-xlarge"" id="fullName-Input" name="fullName" type="text" required></p>
+                  <p>      
+                    <label class="w3-text-teal"><b>Specialty</b></label>
+                    <input class="w3-input w3-border w3-light-grey w3-round-xlarge"" id="specialty-Input" name="Specialty" type="text" required></p>
+                    <p>      
+                      <label class="w3-text-teal"><b>City</b></label>
+                      <input class="w3-input w3-border w3-light-grey w3-round-xlarge"" id="city-Input" name="City" type="text" required></p>
+                      <p>      
+                        <label class="w3-text-teal"><b>Phone</b></label>
+                        <input class="w3-input w3-border w3-light-grey w3-round-xlarge"" id="phone-Input" name="Phone" type="text" required></p>
+                        <p>      
+                          <label class="w3-text-teal"><b>Email</b></label>
+                          <input class="w3-input w3-border w3-light-grey w3-round-xlarge"" id="email-Input" name="Email" type="text" required ></p>
+                          <p>      
+                            <label class="w3-text-teal"><b>About Section (Description)</b></label>
+                            <span class="w3-input w3-border w3-light-grey w3-round-xlarge"" role="textbox"  id="about-Input" name="Description" type="text" required contenteditable></p>
+                              <hr />
+                              <label class="w3-text-grey" id="languages"><b>Languages</b></label>
+                              <label class="w3-text-grey"><br>Select the level of language proficiency</br></label>
+                              <label class="w3-text-teal"><b>Hebrew</br></label>
+                                <div class="form-element">
+                                  <input class="slider" id="hebrew-edit" type="range" min="0" max="100" step="10" >
+                                  <label class="w3-text-grey" id="hebp">0</label>
+                                  <label class="w3-text-grey" id="present">%</label>
+                                  <input class="slider" id="english-edit" type="range" min="0" max="100" step="10" >
+                                  <label class="w3-text-grey" id="enbp">0</label>
+                                  <label class="w3-text-grey" id="present">%</label>
+                                  <input class="slider" id="russian-edit" type="range" min="0" max="100" step="10" >
+                                  <label class="w3-text-grey" id="rubp">0</label>
+                                  <label class="w3-text-grey" id="present">%</label>
+                                  <input class="slider" id="spanish-edit" type="range" min="0" max="100" step="10" >
+                                  <label class="w3-text-grey" id="spbp">0</label>
+                                  <label class="w3-text-grey" id="present">%</label>
+                                  <input class="slider" id="arabic-edit" type="range" min="0" max="100" step="10" >
+                                  <label class="w3-text-grey" id="arbp">0</label>
+                                  <label class="w3-text-grey" id="present">%</label>
+                                </div>
+                                <hr />
+                                <label class="w3-text-grey" id="languages"><b>Certification</b></label>
+                              <label class="w3-text-grey"><br>Please fill in where you were certified as a Trainer and when</br></label>
+                              <label class="w3-text-teal"><b>Shcool Name</b></label>
+                              <input class="w3-input w3-border w3-light-grey w3-round-xlarge"" id="schoolName-Input" name="schoolName" type="text" required></p>
+                              <label class="w3-text-teal"><b>Year</b></label>
+                              <input class="w3-input w3-border w3-light-grey w3-round-xlarge"" id="cert-date-Input" name="year" type="date" required></p>
+                              <label class="w3-text-teal"><b>Certification info</b></label>
+                              <input class="w3-input w3-border w3-light-grey w3-round-xlarge"" id="cert-info-Input" name="year" type="text" required></p>
+                              <hr />
+                              <label class="w3-text-grey" id="Training-Types"><b>Training Types</br></label>
+                              <label class="w3-text-teal"><b> Name of Training type:</b></label>
+                              <input class="w3-input w3-border w3-light-grey w3-round-xlarge"" id="training-type-1"  type="text" required></p>
+                              <label class="w3-text-grey" id="duration"><b>Duration (minutes)</b></label>
+                              <input class="w3-input w3-border w3-light-grey w3-round-xlarge"" id="duration-type-1"  type="number" min="0" max="120" required></p>
+                              <label class="w3-text-grey" id="price"><b>Price</b></label>
+                              <input class="w3-input w3-border w3-light-grey w3-round-xlarge"" id="price-type-1"  type="number" min="0" required></p>
+                              <label class="w3-text-teal"><b>Name of Training type:</b></label>
+                              <input class="w3-input w3-border w3-light-grey w3-round-xlarge" id="training-type-2"  type="text" ></p>
+                              <label class="w3-text-grey" id="duration"><b>Duration (minutes)</b></label>
+                              <input class="w3-input w3-border w3-light-grey w3-round-xlarge" id="duration-type-2"  type="number" min="0" max="120" ></p>
+                              <label class="w3-text-grey" id="price"><b>Price</b></label>
+                              <input class="w3-input w3-border w3-light-grey w3-round-xlarge" id="price-type-2"  type="number" min="0" hidden></p>
+                              <label class="w3-text-teal"><b>TName of Training type:</b></label>
+                              <input class="w3-input w3-border w3-light-grey w3-round-xlarge" id="training-type-3" " type="text" hidden></p>
+                              <label class="w3-text-grey" id="duration"><b>Duration (minutes)</b></label>
+                              <input class="w3-input w3-border w3-light-grey w3-round-xlarge" id="duration-type-3"  type="number" min="0" max="120" ></p>
+                              <label class="w3-text-grey" id="price"><b>Price</b></label>
+                              <input class="w3-input w3-border w3-light-grey w3-round-xlarge"" id="price-type-3"  type="number" min="0" ></p>
+                              <label class="w3-text-teal"><b>Name of Training type:</b></label>
+                              <input class="w3-input w3-border w3-light-grey w3-round-xlarge" id="training-type-4" type="text"></p>
+                              <label class="w3-text-grey" id="duration"><b>Duration (minutes)</b></label>
+                              <input class="w3-input w3-border w3-light-grey w3-round-xlarge" id="duration-type-4"  type="number" min="0" max="120"></p>
+                              <label class="w3-text-grey" id="price"><b>Price</b></label>
+                              <input class="w3-input w3-border w3-light-grey w3-round-xlarge" id="price-type-4"  type="number" min="0"></p>
+
+                              
+                    <p>
+                  <button class="w3-btn w3-teal w3-round-xlarge"">Save Changes</button></p>
+                </form>
+              </div>
+            <br />
+          </div>
+
+          
+
+          <!-- End Right Column -->
+        </div>
+
+        <!-- End Grid -->
+      </div>
+
+      <!-- End Page Container -->
+    </div>
+    <div class="w3-container"  >
+      <footer
+      class="footer-basic" id="footer"
+      "
+    >
+      <ul
+        class="list-inline" id="ul-footer"
+      >
+        <li
+          class="list-inline-item" id="li-footer"
+        >
+          <a
+            href="#"
+            id="a-footer"
+            >Q&amp;A</a
+          >
+        </li>
+        <li
+          class="list-inline-item" id="li-footer"
+        >
+          <a
+            href="#"
+            id="a-footer"
+            >About</a
+          >
+        </li>
+        <li
+          class="list-inline-item" id="li-footer"
+        >
+          <a
+            href="#"
+            id="a-footer"
+            >Conditions&amp;Terms</a
+          >
+        </li>
+      </ul>
+      <h2
+        class="fw-bold"
+        id="h2-footer"
+      >
+        <br />having trouble with the site?<br /><br />CONTACT US:<br />shapeTechnicalTeam@gmail.com<br />
+      </h2>
+      <p
+        class="text-end copyright"
+        id="p-footer"
+      >
+        Shape © 2022&nbsp; &nbsp;
+      </p>
+    </footer>
+    </div>
+    
+    
+    <script>
+      //training types
+      var trainingTypeName1=document.getElementById("training-type-1");
+      var duration1=document.getElementById("duration-type-1");
+      var price1=document.getElementById("price-type-1");
+       
+      var trainingTypeName2=document.getElementById("training-type-2");
+      var duration2=getElementById("duration-type-2");
+      var price2=getElementById("price-type-2");
+      duration1.style.display = "none";
+
+
+      var trainingTypeName2=getElementById("training-type-2");
+      var duration2=getElementById("duration-type-2");
+      var price2=getElementById("price-type-2");
+
+
+      var trainingTypeName3=getElementById("training-type-1");
+      var duration3=getElementById("duration-type-3");
+      var price3=getElementById("price-type-3");
+
+
+
+      var hebrewEdit=document.getElementById('hebrew-edit');
+      var englishEdit=document.getElementById('english-edit');
+      var spanishEdit=document.getElementById('spanish-edit');
+      var russianEdit=document.getElementById('russian-edit');
+      var arabicEdit=document.getElementById('arabic-edit');
+
+      hebrewEdit.addEventListener("click", function() {
+        document.getElementById('hebp').innerHTML=hebrewEdit.value; });
+
+      englishEdit.addEventListener("click", function() {
+        document.getElementById('enbp').innerHTML=englishEdit.value; });
+
+      russianEdit.addEventListener("click", function() {
+        document.getElementById('rubp').innerHTML=russianEdit.value; });
+
+      spanishEdit.addEventListener("click", function() {
+        document.getElementById('spbp').innerHTML=spanishEdit.value; });
+
+      arabicEdit.addEventListener("click", function() {
+        document.getElementById('arbp').innerHTML=arabicEdit.value; });
+
+
+    </script>
+  </body>
+</html>
