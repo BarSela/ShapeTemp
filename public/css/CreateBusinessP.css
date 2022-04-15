@@ -171,6 +171,26 @@ h6 {
 #training-type-4 {
   display: none;
 }
-#addTrainingTypebt {
-  display: block;
+#training-name-1,
+#training-name-2,
+#training-name-3,
+#training-name-4 {
+  width: 450px;
+}
+
+#delTrainingbt {
+  display: inline-block;
+  margin-right: 3px;
+  margin-bottom: 2px;
+}
+#errorMsg-fn,
+#errorMsg-ci,
+#errorMsg-fh,
+#errorMsg-l,
+#errorMsg-sn {
+  display: none;
+}
+#savebt {
+  margin-left: 19cm;
+  margin-top: 3px;
 }
