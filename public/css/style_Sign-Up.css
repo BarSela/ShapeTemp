@@ -8,7 +8,7 @@
 {
     height: 100%;
 	width: 100%;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.13),rgba(0,0,0,0.13)),url(signup.jpg);
+	background-image: linear-gradient( rgba(19, 37, 41, 0.979), rgba(19, 37, 41, 0.979))/*,url(signup.jpg)*/;
 	background-position: center;
 	background-size: cover;
 	position: absolute;
@@ -40,9 +40,11 @@
 	width:220px;
 	margin:35px auto;
 	position:relative;
-	box-shadow: 0 0 20px 9px #ff61241f;
+	box-shadow: 0 0 20px 9px #1f4949;
 	border-radius: 30px;
+	
 }
+
 .toggle-btn
 {
 	padding:10px 30px;
@@ -51,6 +53,7 @@
 	border:0;
 	outline: none;
 	position: relative;
+	color: white;
 }
 #btn
 {
@@ -59,7 +62,7 @@
 	position: absolute;
 	width: 110px;
 	height: 100%;
-	background: #F3C693;
+	background: #2f7272ec;
 	border-radius: 30px;
 	transition: .5s;
 }
@@ -81,7 +84,7 @@
 ::-webkit-input-placeholder {
 	/* Chrome/Opera/Safari */
 	font-weight: bold;
-	color: black;
+	color: white;
   }
 
 .input-field
@@ -92,28 +95,28 @@
 	border-left:0;
 	border-top:0;
 	border-right:0;
-	border-bottom: 1px solid #F3C693;
+	border-bottom: 1px solid #2f7272ec;
 	outline:none;
 	background: transparent;
 }
 
 input[type = email]:focus {
-	box-shadow: 0 0 5px #F3C693;
+	box-shadow: 0 0 5px #2f7272ec;
 	padding: 6px 0px 6px 6px;
 	margin: 5px 1px 3px 0px;
-	border: 1px solid #F3C693;
+	border: 1px solid #2f7272ec;
   }
   input[type = text]:focus {
-	box-shadow: 0 0 5px #F3C693;
+	box-shadow: 0 0 5px #2f7272ec;
 	padding: 6px 0px 6px 6px;
 	margin: 5px 1px 3px 0px;
-	border: 1px solid #F3C693;
+	border: 1px solid #2f7272ec;
   }
   input[type = password]:focus {
-	box-shadow: 0 0 5px #F3C693;
+	box-shadow: 0 0 5px #2f7272ec;
 	padding: 6px 0px 6px 6px;
 	margin: 5px 1px 3px 0px;
-	border: 1px solid #F3C693;
+	border: 1px solid #2f7272ec;
   }
 
 .submit-btn
@@ -123,10 +126,11 @@ input[type = email]:focus {
 	cursor: pointer;
 	display: block;
 	margin: auto;
-	background: #F3C693;
+	background: #2f7272ec;
 	border: 0;
 	outline: none;
 	border-radius: 30px;
+	color: white;
 }
 .check-box
 {
@@ -134,7 +138,7 @@ input[type = email]:focus {
 }
 span
 {
-	color:#777;
+	color:#2f7272ec;
 	font-size:12px;
 	bottom:68px;
 	position:absolute;
@@ -171,7 +175,8 @@ span
 
 button:hover{
     background: transparent;
-    border: 2px solid #F3C693;
+    border: 2px solid #2f7272ec;
+	border-radius: 30px;
     cursor: pointer;
 
 }
